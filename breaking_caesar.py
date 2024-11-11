@@ -31,9 +31,9 @@ def caesar_breaker(text, shift):
     return decypher_text
 
 
-#cypher_text=input("ingresar texto cifrado: ")
+raw_cypher_text=input("ingresar texto cifrado: ")
 
-raw_cypher_text="""NOYZU XEOYV ATIZA GZKJC OZNIU JKYZN KENGB KJKIO JKJZN KUAZI USKYU LHGZZ RKYGT JRKJZ UZNKJ KGZNY ULQOT MYGTJ WAKKT YONGB KZNKX KLUXK HKKTG HRKZU IGRRA VUTYZ UXOKY ULVUR OZOIG ROTZX OMAKG TJZGR KYULR OLKGT JJKGZ NZUOR RAYZX GZKZN KQKEZ AXTOT MVUOT ZYOTZ NKKBU RAZOU TGXEJ KBKRU VSKTZ ULIUJ KYZNK NOYZU XEULI UJKYO YYUOT UXJOT GZKRE XOINZ NGZON GBKHK KTLUX IKJZU RKGBK UAZSG TELGY IOTGZ OTMYZ UXOKY CNOIN OTZAX TSKGT YZNGZ SEGII UATZO YTUZJ KLOTO ZOBKO LEUAC UARJR OQKZU LOTJU AZSUX KGHUA ZEUAX LGBUX OZKZG RKUXE UAXLG BUXOZ KIUJK HXKGQ KXZNK TOCUA RJXKL KXEUA ZUZNK ROYZU LLAXZ NKXXK GJOTM CNOIN YNUAR JNKRV ZNUYK XKGJK XYCNU CUARJ ROQKZ UYZAJ EZNKY AHPKI ZOTSU XKJKZ GOR"""
+#raw_cypher_text="""NOYZU XEOYV ATIZA GZKJC OZNIU JKYZN KENGB KJKIO JKJZN KUAZI USKYU LHGZZ RKYGT JRKJZ UZNKJ KGZNY ULQOT MYGTJ WAKKT YONGB KZNKX KLUXK HKKTG HRKZU IGRRA VUTYZ UXOKY ULVUR OZOIG ROTZX OMAKG TJZGR KYULR OLKGT JJKGZ NZUOR RAYZX GZKZN KQKEZ AXTOT MVUOT ZYOTZ NKKBU RAZOU TGXEJ KBKRU VSKTZ ULIUJ KYZNK NOYZU XEULI UJKYO YYUOT UXJOT GZKRE XOINZ NGZON GBKHK KTLUX IKJZU RKGBK UAZSG TELGY IOTGZ OTMYZ UXOKY CNOIN OTZAX TSKGT YZNGZ SEGII UATZO YTUZJ KLOTO ZOBKO LEUAC UARJR OQKZU LOTJU AZSUX KGHUA ZEUAX LGBUX OZKZG RKUXE UAXLG BUXOZ KIUJK HXKGQ KXZNK TOCUA RJXKL KXEUA ZUZNK ROYZU LLAXZ NKXXK GJOTM CNOIN YNUAR JNKRV ZNUYK XKGJK XYCNU CUARJ ROQKZ UYZAJ EZNKY AHPKI ZOTSU XKJKZ GOR"""
 
 print("Analizando el texto ingresado... ")
 
@@ -59,7 +59,6 @@ if text_analytics[0]>0.060 and text_analytics[0]<0.070:
     for char in letter:#text_analytics[1]:
         shift=(ord(char)-69)%26
         print("Se inicia el intento de romper el cifrado suponiendo que la letra E corresponde a:" , char, "con un desplazamiento de:", shift)
-        input()
         print(caesar_breaker(raw_cypher_text, shift))
         user_answer=input("Es este decifrado preciso para usted? (Y/N) ")
         if user_answer in answers:
@@ -68,7 +67,7 @@ if text_analytics[0]>0.060 and text_analytics[0]<0.070:
         else: 
             print("Continuaremos con la proxima iteracion")
             continue
-    
+        
 else: print ("Un factor de: ", text_analytics[0], " no permite concluir un lenguaje de origen.")
 
 

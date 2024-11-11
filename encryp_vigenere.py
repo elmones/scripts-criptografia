@@ -1,3 +1,6 @@
+def data_collection(user_select):
+
+
 def caesar_enc(text_clear, shift):
     cypher_text = ""
     for i in text_clear:
@@ -29,6 +32,25 @@ def vigenere_enc(text_clear, key):
 
     return cypher_text
 
+user_selection=True
+while (user_selection):
+    print("""Bienvenido al script de servicios de cifrado clasico, con este podras: 
+      1) Cifrar un texto claro usando cifrado por desplazamiento
+      2) Cifrar un texto claro usando cifrado Vigenère
+      3) Romper cifrado por deplazamiento
+      4) Romper cifrado Vigenère.
+      5) salir
+      """)
+    try:
+        user_choise=int(input("Selecciona mediante el numero una opcion: "))
+    except: print ("por payaso te jodiste!")
+
+    if user_choise==1:
+    elif user_choise==2:
+    elif user_choise==3:
+    elif user_choise==4:
+    elif user_choise==5:
+    
 # Solicitar entrada de usuario
 clear_text = input("Inserta un texto a encriptar: ")
 key = input("Inserta la clave para el cifrado Vigenère: ")
